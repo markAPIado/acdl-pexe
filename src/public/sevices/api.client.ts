@@ -15,7 +15,7 @@ class APIClient<T> {
   }
 
   getAll = (config: AxiosRequestConfig) =>
-    axiosInstance.get<T>(this.enpoint, config).then((res) => res.data);
+    axiosInstance.get<T[]>(this.enpoint, config).then((res) => res.data);
 }
 
 export default APIClient;
