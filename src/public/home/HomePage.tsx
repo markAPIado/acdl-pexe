@@ -1,8 +1,8 @@
 import Card from '../components/Card';
-import { useData } from '../hooks/useData';
+import { useFakeData } from '../hooks/useFakeData';
 
 export default function HomePage() {
-  const { data, loading } = useData();
+  const { data, loading } = useFakeData();
 
   if (loading) {
     return (

@@ -1,4 +1,4 @@
-import { UnsplashData } from '../hooks/useData';
+import { UnsplashData } from '../hooks/useFakeData';
 
 interface CardProps {
   item: UnsplashData;

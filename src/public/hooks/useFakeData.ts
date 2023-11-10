@@ -18,7 +18,7 @@ export interface UnsplashData {
   urls: Urls;
 }
 
-export const useData = () => {
+export const useFakeData = () => {
   const [data, setData] = useState<UnsplashData[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
