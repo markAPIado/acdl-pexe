@@ -1,15 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
 import Card from '../components/Card';
-import { UnsplashData } from '../hooks/useFakeData';
-import APIClient from '../sevices/api.client';
-
-const apiClient = new APIClient<UnsplashData>('/photos');
+import useImages from '../hooks/useImages';
 
 export default function HomePage() {
-  const { data, isLoading } = useQuery({
-    queryKey: ['photos'],
-    queryFn: apiClient.getAll
-  });
+  const { data, isLoading } = useImages();
 
   if (isLoading) {
     return (
