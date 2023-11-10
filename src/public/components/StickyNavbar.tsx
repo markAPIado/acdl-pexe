@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function StickyNavbar() {
   return (
-    <nav className="sticky top-0 z-10 bg-gray-800">
+    <nav className="sticky top-0 z-10 bg-gray-800 shadow-md">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex flex-1 sm:items-stretch sm:justify-start">

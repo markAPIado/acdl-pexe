@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <>
       <div className="mb-10 flex">
-        <div className="join mx-auto">
+        <div className="join mx-auto hover:shadow-lg">
           <button
             onClick={() => setPage(page - 1)}
             disabled={page === 1}
@@ -32,14 +32,15 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-      {isLoading && (
+      {isLoading ? (
         <div className="flex h-screen items-center justify-center">
           <div className="h-32 w-32 animate-spin rounded-full border-b-2 border-t-2 border-gray-900 dark:border-gray-100"></div>
         </div>
+      ) : (
+        <div className="mb-20 grid grid-cols-1 gap-6 md:grid-cols-3 xl:grid-cols-4">
+          {data?.map((item) => <Card key={item.id} item={item} />)}
+        </div>
       )}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {data?.map((item) => <Card key={item.id} item={item} />)}
-      </div>
     </>
   );
 }

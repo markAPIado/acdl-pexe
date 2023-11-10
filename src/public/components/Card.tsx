@@ -6,11 +6,11 @@ interface CardProps {
 
 export default function Card({ item }: CardProps) {
   return (
-    <div className="md:w-100 card h-auto bg-base-100 shadow-xl sm:w-full lg:w-full">
+    <div className="md:w-100 card h-auto bg-base-100 shadow-xl duration-300 ease-in-out hover:scale-105 sm:w-full lg:w-full">
       <figure className="image-cover">
         <img
-          className="w-full"
-          src={item.urls.regular}
+          className="h-48 w-full object-cover"
+          src={item.urls.regular || 'https://via.placeholder.com/350'}
           alt={item.alt_description}
         />
       </figure>
