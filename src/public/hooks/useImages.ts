@@ -32,6 +32,7 @@ export default function useImages(query: ImageQuery) {
         params: {
           page: query.page
         }
-      })
+      }),
+    staleTime: 1000 * 30 // 30 seconds
   });
 }
