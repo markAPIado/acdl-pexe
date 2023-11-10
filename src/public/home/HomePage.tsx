@@ -2,7 +2,7 @@ import Card from '../components/Card';
 import useImages from '../hooks/useImages';
 
 export default function HomePage() {
-  const { data, isLoading } = useImages();
+  const { data, isLoading, error } = useImages();
 
   if (isLoading) {
     return (
@@ -12,6 +12,15 @@ export default function HomePage() {
     );
   }
 
+  if (error) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="text-2xl text-red-500 dark:text-red-400">
+          {error.message}
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {data?.map((item) => <Card key={item.id} item={item} />)}

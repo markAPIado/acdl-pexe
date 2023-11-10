@@ -21,7 +21,7 @@ export interface UnsplashData {
 export default function useImages() {
   const apiClient = new APIClient<UnsplashData>('/photos');
 
-  return useQuery({
+  return useQuery<UnsplashData[], Error>({
     queryKey: ['images'],
     queryFn: apiClient.getAll
   });
