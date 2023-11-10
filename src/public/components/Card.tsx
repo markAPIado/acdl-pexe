@@ -16,7 +16,7 @@ export default function Card({ item }: CardProps) {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-slate-200">{item.alt_description}</h2>
-        <p>{item.description}</p>
+        <p className="break-all">{item.description}</p>
       </div>
     </div>
   );
