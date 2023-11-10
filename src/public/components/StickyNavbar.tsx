@@ -12,7 +12,7 @@ export default function StickyNavbar() {
               <img
                 className="h-8 w-auto invert filter"
                 src={logo}
-                alt="Timy logo"
+                alt="PEXE Logo"
               />
               <h1 className="ml-4 text-xl font-black text-white">PEXE</h1>
             </Link>
