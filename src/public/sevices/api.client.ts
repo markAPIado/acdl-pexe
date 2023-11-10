@@ -1,10 +1,21 @@
-import axios, { CanceledError } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
-export default axios.create({
+const axiosInstance = axios.create({
   baseURL: 'https://api.unsplash.com',
   params: {
     client_id: 'yyRmol1lp-VRtTYEcpNy8o0Aty4Q_mAl3EuZCDZszAU'
   }
 });
 
-export { CanceledError };
+class APIClient<T> {
+  enpoint: string;
+
+  constructor(enpoint: string) {
+    this.enpoint = enpoint;
+  }
+
+  getAll = (config: AxiosRequestConfig) =>
+    axiosInstance.get<T>(this.enpoint, config).then((res) => res.data);
+}
+
+export default APIClient;
