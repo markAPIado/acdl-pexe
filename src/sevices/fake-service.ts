@@ -1,5 +1,5 @@
-import unsplash from '../../unsplash';
-import { UnsplashData } from '../hooks/useImages';
+import unsplash from '../unsplash/unsplash-data';
+import { UnsplashData } from '../unsplash/useImages';
 
 class FakeService {
   getAll(): Promise<UnsplashData[]> {
