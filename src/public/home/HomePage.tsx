@@ -1,20 +1,16 @@
 import { useState } from 'react';
 import Card from '../components/Card';
 import useImages from '../hooks/useImages';
+import ErrorBanner from '../components/ErrorBanner';
 
 export default function HomePage() {
   const [page, setPage] = useState(1);
   const { data, isLoading, error } = useImages({ page });
 
   if (error) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="text-2xl text-red-500 dark:text-red-400">
-          {error.message}
-        </div>
-      </div>
-    );
+    return <ErrorBanner message={error.message} />;
   }
+
   return (
     <>
       <div className="mb-10 flex">
