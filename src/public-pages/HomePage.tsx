@@ -1,7 +1,9 @@
+import Unsplash from '../unsplash/Unsplash';
+
 export default function HomePage() {
   return (
     <>
-      <h1>PEXE</h1>
+      <Unsplash />
     </>
   );
 }
