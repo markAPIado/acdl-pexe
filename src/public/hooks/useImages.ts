@@ -18,11 +18,20 @@ export interface UnsplashData {
   urls: Urls;
 }
 
-export default function useImages() {
+interface ImageQuery {
+  page: number;
+}
+
+export default function useImages(query: ImageQuery) {
   const apiClient = new APIClient<UnsplashData>('/photos');
 
   return useQuery<UnsplashData[], Error>({
-    queryKey: ['images'],
-    queryFn: apiClient.getAll
+    queryKey: ['images', query],
+    queryFn: () =>
+      apiClient.getAll({
+        params: {
+          page: query.page
+        }
+      })
   });
 }
