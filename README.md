@@ -4,7 +4,17 @@
 
 PEXE is a simple application that uses the unsplash API to display images.
 
+You can view the live demo [https://pexe.markapiado.com](https://pexe.markapiado.com).
+
 ## Installation
+
+**Cloning the repository**
+
+Run the following command to clone the repository.
+
+```
+https://github.com/markAPIado/acdl-pexe.git
+```
 
 Run the following command to install the dependencies.
 
@@ -35,6 +45,7 @@ Run the following command to start the development server.
 ```
 npm run dev
 ```
+
 ## Build
 
 Run the following command to compile the code to `dist` folder.
